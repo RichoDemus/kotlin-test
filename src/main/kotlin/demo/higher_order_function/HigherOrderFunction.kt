@@ -1,7 +1,5 @@
 package demo.higher_order_function
 
-import kotlin.reflect.KFunction1
-
 
 fun main(args: Array<String>) {
     val id = 10
@@ -14,10 +12,9 @@ fun main(args: Array<String>) {
 
 
 //fun idToContainer(dao: KFunction1<Int, Container>):(Int) -> Container {
-fun idToContainer(dao: KFunction1<Id, Container>):(Int) -> Container {
-
-    return {id:Int -> dao(id)}
-}
+//fun idToContainer(dao: KFunction1<Id, Container>):(Int) -> Container {
+//    return {id:Int -> dao(id)}
+//}
 
 fun idToContainer(id:Int) = Id(id)
 fun containerDao(id:Id) = Container(id)
