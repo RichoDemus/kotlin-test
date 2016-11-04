@@ -30,11 +30,8 @@ private fun String.addName() = "$this and Richo "
 private fun String.separate() = this.split(" ")
 private fun List<String>.join() = this.reduce { left, right -> "$left - $right" }
 // ----------------------------------------
-// How to turn this into a function that applies to Any?
-private fun String.map(func: (String) -> String): String = func.invoke(this)
-
-// private fun <T> Any.map(func: (T)->Any):Any = func.invoke((T)this)
-
+private fun <T, Y> T.map(func: (T) -> Y): Y = func.invoke(this)
+// ----------------------------------------
 
 fun main(args: Array<String>) {
     println("2 doubled is ${2.double()}")
@@ -45,4 +42,7 @@ fun main(args: Array<String>) {
     println("First word".addName().separate().join())
 
     println("hello".map { str -> str.toUpperCase() })
+
+    val message = 1.map { number -> "Your number is $number" }
+    println(message)
 }
