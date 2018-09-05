@@ -8,7 +8,7 @@ import java.time.Duration
 import kotlin.system.measureTimeMillis
 
 
-val logger = LoggerFactory.getLogger("Main")!!
+val logger = LoggerFactory.getLogger("AsyncQueue")!!
 
 /**
  * <pre>
